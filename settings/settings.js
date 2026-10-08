@@ -44,31 +44,18 @@ async function initialize() {
     await loadServers();
     editServer(currentSettings.selectedServerId);
     setupEventListeners();
-    await loadVersion();
+    loadVersion();
   } catch (error) {
     console.error('Failed to initialize settings:', error);
   }
 }
 
 /**
- * Load and display version from VERSION file
+ * Display version from manifest.json
  */
-async function loadVersion() {
-  try {
-    const versionDisplay = document.getElementById('versionDisplay');
-    const response = await fetch('../../VERSION');
-    if (response.ok) {
-      const version = await response.text();
-      // Trim whitespace and remove any extra lines
-      const cleanVersion = version.trim();
-      versionDisplay.textContent = `Shadowsocks Proxy v${cleanVersion}`;
-    } else {
-      console.warn('Failed to load VERSION file, using default');
-    }
-  } catch (error) {
-    console.warn('VERSION file not found or readable:', error);
-    // Keep default version display if file can't be loaded
-  }
+function loadVersion() {
+  const versionDisplay = document.getElementById('versionDisplay');
+  versionDisplay.textContent = `Shadowsocks Proxy v${chrome.runtime.getManifest().version}`;
 }
 
 /**
