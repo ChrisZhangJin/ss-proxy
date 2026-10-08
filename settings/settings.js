@@ -55,7 +55,7 @@ async function initialize() {
  */
 function loadVersion() {
   const versionDisplay = document.getElementById('versionDisplay');
-  versionDisplay.textContent = `Shadowsocks Proxy v${chrome.runtime.getManifest().version}`;
+  versionDisplay.textContent = `ss-proxy ${chrome.runtime.getManifest().version}`;
 }
 
 /**
