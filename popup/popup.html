@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadowsocks Proxy</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Server List Card - iOS Style Picker -->
+    <div class="server-list-container">
+      <select id="serverList" class="server-list">
+        <option value="">Loading...</option>
+      </select>
+    </div>
+
+    <!-- Credentials and Connect Row -->
+    <div class="credentials-connect-row">
+      <input type="text" id="username" class="credential-input" placeholder="用户名" />
+      <input type="password" id="password" class="credential-input" placeholder="密码" />
+      <button id="connectBtn" class="btn-ios btn-connect">
+        <span class="connect-icon">▶</span> 连接
+      </button>
+    </div>
+
+    <!-- Global Proxy Toggle -->
+    <div class="toggle-row">
+      <span class="toggle-label">全局代理</span>
+      <button id="globalToggle" class="toggle-btn" data-state="off"></button>
+    </div>
+
+    <!-- Auto-add Blocked Domains Toggle -->
+    <div class="toggle-row">
+      <span class="toggle-label" title="代理模式下，代理列表中的网站所加载的资源若直连超时/被重置，其域名会自动加入代理列表">自动添加被墙域名</span>
+      <button id="autoAddToggle" class="toggle-btn" data-state="off"></button>
+    </div>
+
+    <!-- Current Domain Display -->
+    <div class="domain-display-row">
+      <input type="text" id="domainInput" class="domain-input" placeholder="当前页面域名" readonly />
+    </div>
+
+    <!-- Domain Proxy Toggle -->
+    <div class="toggle-row">
+      <span class="toggle-label">此域名使用代理</span>
+      <button id="domainProxyToggle" class="toggle-btn" data-state="off"></button>
+    </div>
+
+    <!-- Status Bar with Settings Icon -->
+    <div class="status-bar">
+      <span class="status-label">状态</span>
+      <span class="status-value">未连接</span>
+      <button id="settingsBtn" class="settings-icon-btn" title="设置">
+        ⚙️
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

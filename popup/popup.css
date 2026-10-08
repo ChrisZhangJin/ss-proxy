@@ -1,0 +1,396 @@
+/* Reset and base styles - iOS Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 360px;
+  height: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  background-color: #f2f2f7;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: #f2f2f7;
+  gap: 12px;
+  height: auto;
+  overflow: visible;
+}
+
+/* iOS-style Card Container */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Server List - iOS Style Picker */
+.server-list-container {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+.server-list {
+  width: 100%;
+  height: 44px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 0 40px 0 16px;
+  background: white;
+  cursor: pointer;
+  font-family: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  color: #000;
+  position: relative;
+  z-index: 1;
+}
+
+/* iOS picker arrow */
+.server-list-container::after {
+  content: '▼';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: #8e8e93;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dropdown options */
+.server-list option {
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #000;
+  background: white;
+}
+
+.server-list option:checked {
+  background-color: #007aff;
+  color: white;
+}
+
+/* Server list font styling */
+.server-list option,
+.server-list {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif !important;
+}
+
+/* Credentials and Connect Row - iOS Style */
+.credentials-connect-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  min-width: 0;
+}
+
+.credential-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #e5e5e7;
+  font-size: 16px;
+  outline: none;
+  height: 44px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background: #f2f2f7;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.credential-input:focus {
+  border-color: #007aff;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* iOS-style Button Base */
+.btn-ios {
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  height: 44px;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: all 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Connect Button - iOS Style */
+.btn-connect {
+  flex: 0 0 auto;
+  min-width: 100px;
+  padding: 0 20px;
+  background: #007aff;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 122, 255, 0.3);
+}
+
+.btn-connect:hover {
+  background: #0051d5;
+  box-shadow: 0 3px 8px rgba(0, 122, 255, 0.4);
+}
+
+.btn-connect:active {
+  background: #0041b8;
+  transform: scale(0.98);
+}
+
+.btn-connect.connected {
+  background: #34c759;
+  box-shadow: 0 2px 6px rgba(52, 199, 89, 0.3);
+}
+
+.btn-connect.connected:hover {
+  background: #28a745;
+  box-shadow: 0 3px 8px rgba(52, 199, 89, 0.4);
+}
+
+.connect-icon {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+/* Toggle Row - iOS Style */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  height: 44px;
+}
+
+.toggle-label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;
+}
+
+/* iOS Toggle Switch */
+.toggle-btn {
+  width: 51px;
+  height: 31px;
+  background: #e5e5e7;
+  border-radius: 16px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+}
+
+.toggle-btn[data-state="on"] {
+  background: #007aff;
+}
+
+.toggle-btn::after {
+  content: '';
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: all 0.3s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-btn[data-state="on"]::after {
+  transform: translateX(20px);
+}
+
+.toggle-btn:active::after {
+  width: 29px;
+}
+
+/* Domain Display Row */
+.domain-display-row {
+  background: white;
+  padding: 0;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.domain-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  color: #000;
+  cursor: default;
+  height: 44px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.domain-input[readonly] {
+  cursor: default;
+}
+
+/* Status Bar with Settings Icon */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 15px;
+  color: #000;
+  height: 44px;
+}
+
+.status-bar .status-label {
+  font-weight: 400;
+  color: #8e8e93;
+}
+
+.status-bar .status-value {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  color: #000;
+}
+
+.settings-icon-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #f2f2f7;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #007aff;
+}
+
+.settings-icon-btn:hover {
+  background: #e5e5e7;
+}
+
+.settings-icon-btn:active {
+  transform: scale(0.95);
+}
+
+/* Removed old domain button styles - now using toggle instead */
+
+/* Disabled state - iOS Style */
+button:disabled,
+input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Proxy Status - iOS Style */
+.proxy-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 15px;
+  color: #000;
+  margin-top: 4px;
+}
+
+.status-label {
+  font-weight: 400;
+  color: #8e8e93;
+}
+
+.status-value {
+  font-weight: 600;
+  color: #000;
+}
+
+.status-value.connected {
+  color: #34c759;
+}
+
+.status-value.disconnected {
+  color: #ff3b30;
+}
+
+/* Toast Notification System - iOS Style */
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.toast {
+  min-width: 200px;
+  max-width: 320px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  background: rgba(60, 60, 67, 0.92);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+  pointer-events: auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.success {
+  background: rgba(52, 199, 89, 0.92);
+}
+
+.toast.error {
+  background: rgba(255, 59, 48, 0.92);
+}
+
+.toast.info {
+  background: rgba(0, 122, 255, 0.92);
+}

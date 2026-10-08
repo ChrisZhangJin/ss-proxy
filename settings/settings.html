@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadowsocks Proxy Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Three-panel layout -->
+    <div class="three-panel-layout">
+      <!-- Left Panel: Domain List -->
+      <div class="left-panel">
+        <div class="panel-header">
+          <h2 class="panel-title">指定走代理的域名(自动保存)</h2>
+        </div>
+        <div class="panel-content">
+          <!-- Domain list -->
+          <textarea id="domainList" class="domain-textarea" placeholder="google.com
+youtube.com
+facebook.com
+twitter.com
+instagram.com
+tiktok.com
+x.com
+reddit.com
+github.com
+stackoverflow.com
+medium.com
+openai.com
+anthropic.com
+googleapis.com
+gstatic.com
+ytimg.com
+fbcdn.net
+twimg.com
+cloudflare.com
+..."></textarea>
+
+          <!-- Action buttons -->
+          <div class="action-buttons">
+            <button id="importDomainsBtn" class="btn btn-test">📥 导入列表</button>
+            <button id="exportDomainsBtn" class="btn btn-test">📤 导出列表</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Middle Panel: Server List -->
+      <div class="middle-panel">
+        <div class="panel-header">
+          <h2 class="panel-title">服务器列表</h2>
+        </div>
+        <div class="panel-content">
+          <!-- Server list (click to edit) -->
+          <ul id="serverListView" class="server-list-view"></ul>
+
+          <!-- Info message -->
+          <div class="pac-info">
+            <small>点击服务器进行编辑。标记 ● 的为当前使用的服务器，也可在弹出窗口的服务器列表中切换。</small>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="action-buttons">
+            <button id="newServerBtn" class="btn btn-add">＋ 新建服务器</button>
+          </div>
+          <div class="action-buttons">
+            <button id="importServersBtn" class="btn btn-test">📥 导入服务器</button>
+            <button id="exportServersBtn" class="btn btn-test">📤 导出服务器</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel: Server Editor -->
+      <div class="right-panel">
+        <div class="panel-header">
+          <h2 class="panel-title" id="editorTitle">编辑服务器</h2>
+        </div>
+        <div class="panel-content">
+          <!-- Server Configuration Form -->
+          <div class="config-form">
+            <div class="form-group">
+              <label class="form-label">服务器名称</label>
+              <input type="text" id="serverName" class="form-input" placeholder="Localhost" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">主机地址</label>
+              <input type="text" id="serverHost" class="form-input" placeholder="127.0.0.1" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group half">
+                <label class="form-label">端口</label>
+                <input type="number" id="serverPort" class="form-input" min="1" max="65535" placeholder="1080" />
+              </div>
+
+              <div class="form-group half">
+                <label class="form-label">协议</label>
+                <select id="serverProtocol" class="form-select">
+                  <option value="http">HTTP</option>
+                  <option value="https">HTTPS</option>
+                  <option value="socks5">SOCKS5</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group half">
+                <label class="form-label">用户名 (可选)</label>
+                <input type="text" id="serverUsername" class="form-input" autocomplete="off" />
+              </div>
+
+              <div class="form-group half">
+                <label class="form-label">密码 (可选)</label>
+                <input type="password" id="serverPassword" class="form-input" autocomplete="new-password" />
+              </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="config-action-buttons">
+              <button id="saveServerBtn" class="btn btn-add">✓ 保存</button>
+              <button id="selectServerBtn" class="btn btn-test">设为当前</button>
+              <button id="deleteServerBtn" class="btn btn-delete">✕ 删除</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <button id="backBtn" class="btn btn-back">← 返回</button>
+      <span class="version" id="versionDisplay">Shadowsocks Proxy v1.0.0</span>
+    </footer>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>

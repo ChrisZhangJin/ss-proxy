@@ -1,0 +1,496 @@
+/* Reset and base styles - iOS Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #000;
+  background-color: #f2f2f7;
+  padding: 16px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #f2f2f7;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Three-panel layout - iOS Style */
+.three-panel-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  min-height: 600px;
+  padding: 16px;
+}
+
+/* Panels - iOS Cards */
+.left-panel,
+.middle-panel,
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.panel-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: white;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.left-panel .panel-header {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.right-panel .panel-header {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.panel-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+/* Domain textarea - iOS Style */
+.domain-textarea {
+  flex: 1;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e5e5e7;
+  border-radius: 10px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: none;
+  background: #f2f2f7;
+  color: #000;
+  overflow-y: auto;
+  transition: all 0.2s;
+}
+
+.domain-textarea:focus {
+  outline: none;
+  border-color: #007aff;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* PAC textarea - iOS Style */
+.pac-textarea {
+  flex: 1;
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e5e5e7;
+  border-radius: 10px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Courier New', monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  resize: none;
+  background: #f2f2f7;
+  color: #000;
+  overflow-y: auto;
+  transition: all 0.2s;
+}
+
+.pac-textarea:focus {
+  outline: none;
+  border-color: #007aff;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.pac-info {
+  margin-top: 12px;
+  color: #8e8e93;
+  font-size: 13px;
+  padding: 8px 12px;
+  background: rgba(142, 142, 147, 0.1);
+  border-radius: 8px;
+}
+
+/* Action buttons - iOS Style */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn {
+  flex: 1;
+  height: 44px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-add {
+  background: #007aff;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0, 122, 255, 0.3);
+}
+
+.btn-add:hover {
+  background: #0051d5;
+  box-shadow: 0 3px 8px rgba(0, 122, 255, 0.4);
+}
+
+.btn-add:active {
+  background: #0041b8;
+}
+
+/* Test Button */
+.btn-test {
+  background: #8e8e93;
+  color: white;
+  box-shadow: 0 2px 6px rgba(142, 142, 147, 0.3);
+}
+
+.btn-test:hover {
+  background: #6e6e73;
+  box-shadow: 0 3px 8px rgba(142, 142, 147, 0.4);
+}
+
+.btn-test:active {
+  background: #5a5a5e;
+}
+
+/* Config Form - iOS Style */
+.config-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.half {
+  flex: 1;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+}
+
+.form-input,
+.form-select {
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #e5e5e7;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #f2f2f7;
+  color: #000;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #007aff;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.form-input::placeholder {
+  color: #8e8e93;
+}
+
+/* Checkbox - iOS Style */
+.checkbox-group {
+  margin-top: 8px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #000;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e5e5e7;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+  background: #007aff;
+  border-color: #007aff;
+}
+
+.checkbox-label input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.checkbox-label input[type="checkbox"]:focus {
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* Config Action Buttons */
+.config-action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.config-action-buttons .btn {
+  flex: 1;
+  height: 44px;
+}
+
+/* Test Result */
+.test-result {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
+}
+
+.test-result.show {
+  display: block;
+}
+
+.test-result.success {
+  background: rgba(52, 199, 89, 0.1);
+  color: #34c759;
+  border: 1px solid #34c759;
+}
+
+.test-result.error {
+  background: rgba(255, 59, 48, 0.1);
+  color: #ff3b30;
+  border: 1px solid #ff3b30;
+}
+
+/* Footer - iOS Style */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: white;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.btn-back {
+  padding: 0 24px;
+  height: 44px;
+  background: #007aff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  transition: all 0.2s;
+  font-family: inherit;
+  box-shadow: 0 2px 6px rgba(0, 122, 255, 0.3);
+  -webkit-appearance: none;
+  appearance: none;
+  width: auto;
+  max-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-back:hover {
+  background: #0051d5;
+  box-shadow: 0 3px 8px rgba(0, 122, 255, 0.4);
+}
+
+.btn-back:active {
+  background: #0041b8;
+  transform: scale(0.98);
+}
+
+.version {
+  font-size: 13px;
+  color: #8e8e93;
+  font-weight: 400;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .three-panel-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1401px) {
+  .three-panel-layout {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Scrollbar styling - iOS Style */
+textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Server list - iOS Style */
+.server-list-view {
+  list-style: none;
+  flex: 1;
+  min-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #e5e5e7;
+  border-radius: 10px;
+  background: #f2f2f7;
+  margin-bottom: 12px;
+}
+
+.server-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #e5e5e7;
+  transition: background 0.2s;
+}
+
+.server-item:last-child {
+  border-bottom: none;
+}
+
+.server-item:hover {
+  background: #e5e5ea;
+}
+
+.server-item.editing {
+  background: white;
+  box-shadow: inset 3px 0 0 #007aff;
+}
+
+.server-item-dot {
+  width: 10px;
+  color: #34c759;
+  font-size: 12px;
+}
+
+.server-item-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.server-item-name {
+  font-weight: 500;
+}
+
+.server-item-addr {
+  font-size: 12px;
+  color: #8e8e93;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Courier New', monospace;
+}
+
+.server-list-empty {
+  padding: 16px;
+  color: #8e8e93;
+  text-align: center;
+}
+
+/* Delete Button */
+.btn-delete {
+  background: #ff3b30;
+  color: white;
+  box-shadow: 0 2px 6px rgba(255, 59, 48, 0.3);
+}
+
+.btn-delete:hover {
+  background: #d70015;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
