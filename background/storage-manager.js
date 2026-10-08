@@ -108,11 +108,10 @@ async function initializeStorage() {
       updates.sampleDomainsLoaded = true;
       log('[Storage Manager] Loaded', sampleDomains.length, 'domains from sample-domains.txt');
     } else {
-      // If loading failed, use defaults
+      // If loading failed, use defaults and retry on next startup
       if (!data.proxyDomains) {
         updates.proxyDomains = DEFAULT_PROXY_DOMAINS;
       }
-      updates.sampleDomainsLoaded = true;
     }
   }
 
